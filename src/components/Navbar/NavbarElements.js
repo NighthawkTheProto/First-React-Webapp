@@ -32,10 +32,9 @@ color: #808080;
 @media screen and (max-width: 768px) {
 	display: block;
 	position: absolute;
-	top: 0;
-	right: 0;
-	transform: translate(-100%, 75%);
-	font-size: 1.8rem;
+	top: 3%;
+	right: 5%;
+	font-size: 2rem;
 	cursor: pointer;
 }
 `;
