@@ -3,11 +3,9 @@ import "./style.css";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/about';
-import Events from './pages/events';
+import Privacy from './pages/privacy';
 import Home from './pages/home';
-function openNav(){
-  console.log("open Nav")
-}
+
 
 export default function App() {
   return (
@@ -15,14 +13,12 @@ export default function App() {
       <Router>
       <Navbar />
       <Routes>
-        <Route path='/home' exact component={Home} />
-        <Route path='/home' component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/privacy' component={Events} />
+        <Route path='/home' exact element={<Home/>} />
+        <Route path='/home' element={<Home/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/privacy' element={<Privacy/>} />
       </Routes>
     </Router>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
     </div>
   );
 }
