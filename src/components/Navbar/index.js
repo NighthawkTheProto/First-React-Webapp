@@ -10,20 +10,33 @@ NavMenu,
 //NavBtn,
 //NavBtnLink,
 } from './NavbarElements';
+var hasFlipped = "False";
 
-//function openNav(){
-//  console.log("open Nav")
-  
-//}
+function openNav(){
+	if (hasFlipped == "True") {
+		document.getElementById("nav").style.display = "none";
+		document.getElementById("hamburger").style.rotate = "";
+		document.getElementById("hamburger").style.left = "";
+		document.getElementById("hamburger").style.top = "";
+		hasFlipped = "False";
+	}
+	else if(hasFlipped == "False"){
+		document.getElementById("nav").style.display = "flex";
+		document.getElementById("hamburger").style.rotate = "90deg";
+		document.getElementById("hamburger").style.left = "94.5%";
+		document.getElementById("hamburger").style.top = "14%";
+		hasFlipped = "True";
+	}
+
+}
 
 
 const Navbar = () => {
 return (
 	<>
 	<Nav>
-	{/*<Bars onClick={openNav} /> use this to call function openNav*/}
-   <Bars />
-		<NavMenu>
+	<Bars id={"hamburger"} onClick={openNav} />
+		<NavMenu id={"nav"}>
     <NavLink to="/home" activeStyle>
       Home
     </NavLink>
@@ -42,6 +55,7 @@ return (
 	</Nav>
 	</>
 );
+
 };
 
 export default Navbar;
